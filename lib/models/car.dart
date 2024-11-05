@@ -25,7 +25,7 @@ class Car {
         this.quantity = 0,
       });
 
-  // Десериализация JSON в объект Car
+
   factory Car.fromJson(Map<String, dynamic> json) {
     return Car(
       json['name'],
@@ -42,7 +42,7 @@ class Car {
     );
   }
 
-  // Сериализация объекта Car в JSON
+
   Map<String, dynamic> toJson() {
     return {
       'id': id,

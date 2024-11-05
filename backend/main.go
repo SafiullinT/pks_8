@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-// Структура Car для хранения информации об автомобиле
+
 type Car struct {
 	ID          int     `json:"id"`
 	Name        string  `json:"name"`
@@ -51,26 +51,26 @@ var cars = []Car{
 	},
 }
 
-// обработчик для GET-запроса, возвращает список автомобилей
+
 func getCarsHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(cars)
 }
 
-// обработчик для POST-запроса, добавляет новый автомобиль в список
+
 func addCarHandler(w http.ResponseWriter, r *http.Request) {
 	var newCar Car
 	if err := json.NewDecoder(r.Body).Decode(&newCar); err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
-	newCar.ID = len(cars) + 1 // Автоматически назначаем ID
+	newCar.ID = len(cars) + 1
 	cars = append(cars, newCar)
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(newCar)
 }
 
-// обработчик для PUT-запроса, обновляет информацию об автомобиле
+
 func updateCarHandler(w http.ResponseWriter, r *http.Request) {
 	var updatedCar Car
 	if err := json.NewDecoder(r.Body).Decode(&updatedCar); err != nil {
@@ -89,7 +89,7 @@ func updateCarHandler(w http.ResponseWriter, r *http.Request) {
 	http.Error(w, "Car not found", http.StatusNotFound)
 }
 
-// обработчик для DELETE-запроса, удаляет автомобиль по ID
+
 func deleteCarHandler(w http.ResponseWriter, r *http.Request) {
 	var targetCar Car
 	if err := json.NewDecoder(r.Body).Decode(&targetCar); err != nil {

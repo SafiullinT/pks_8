@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:async'; // Импорт для работы с таймерами
+import 'dart:async';
 import '../models/car.dart';
 import '../service/api_service.dart';
 import 'add_car_screen.dart';
@@ -26,14 +26,14 @@ class CarStoreScreen extends StatefulWidget {
 class _CarStoreScreenState extends State<CarStoreScreen> {
   List<Car> _products = [];
   bool _isLoading = true;
-  Timer? _timer; // Добавляем таймер
+  Timer? _timer;
 
   @override
   void initState() {
     super.initState();
     _fetchProducts();
 
-    // Настройка таймера для обновления данных каждые 10 секунд
+
     _timer = Timer.periodic(Duration(seconds: 10), (Timer t) {
       _fetchProducts();
     });
@@ -41,13 +41,13 @@ class _CarStoreScreenState extends State<CarStoreScreen> {
 
   @override
   void dispose() {
-    _timer?.cancel(); // Отмените таймер при уничтожении виджета
+    _timer?.cancel();
     super.dispose();
   }
 
   Future<void> _fetchProducts() async {
     setState(() {
-      _isLoading = true; // Установите флаг загрузки при каждом запросе
+      _isLoading = true;
     });
     try {
       final products = await ApiService().getCars();
