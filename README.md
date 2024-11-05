@@ -1,16 +1,10 @@
-# pks_8
+# Практическая работа 8 ПКС
 
-A new Flutter project.
+## Сафиуллин Тимур Иванович ЭФБО-03-22
 
-## Getting Started
+Функционал остался с ПКС 6, появился api
+## Главная страница
+![Главная страница](https://github.com/SafiullinT/pks_8/blob/master/images/1.jpg)
+## Get запрос
+![Get запрос](https://github.com/SafiullinT/pks_8/blob/master/images/2.jpg)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
